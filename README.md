@@ -63,7 +63,7 @@ ovs-ofctl add-flow s1 "table=0,priority=500,ip,nw_dst=10.0.0.1/32,actions=mod_dl
 
 ovs-ofctl add-flow s1 "table=0,priority=500,ip,nw_dst=20.0.0.1/32,actions=mod_dl_dst=ca:03:c6:01:06:0b,output:2"
 
-（报文类型写ip或是icmp都能成功，至于为什么，还不懂
+（报文类型写ip或是icmp都能成功，至于为什么，具体没有研究过，不过大致查了一下，大概好像是icmp包是封装在ip包里的。
 
 ovs-ofctl add-flow s1 "table=0,priority=500,icmp,nw_dst=10.0.0.1/32,actions=mod_dl_dst=0a:9c:4b:db:35:27,output:1"
 
@@ -82,6 +82,21 @@ ovs-ofctl add-flow s1 "table=0,priority=500,icmp,nw_dst=20.0.0.1/32,actions=mod_
 2. 用arp -s <ip地址> <mac地址>命令将10.0.0.254和20.0.0.254的mac地址配置到h1和h2的arp表里。
 
 测试之后发现，这两种方式都可以让h1成功ping通h2。
+
+***
+
+用锐捷的S5750C交换机和RG-ONC控制器，来进行实验的话，和OVS有一些不一样的地方。
+
+首先，配置网关，即10.0.0.254和20.0.0.254这两个地址时，有两种方式：
+
+第一种：s1-eth1和s1-eth2设为switchport mode access，再将它们加入两个vlan里，把这两个vlan的ip设为10.0.0.254和20.0.0.254。
+
+第二种：s1-eth1和s2-eth2设为no switchport，再将它们分别设置ip地址，10.0.0.254和20.0.0.254。
+
+用第二种方式可以很容易地让h1和h2 ping通，这种方式里，不用任何流表，S5750C就可以正常对h1发来的arp做处理并做出回应，所以不需要在h1的arp表项上做上面的那些工作。对ip包进行转发则需要下发流表，不过，只需要指定输出端口就行了，不需要更改目的mac地址。应该是锐捷在设计产品的时候让S5750C把这些事情自动完成了。但即使h1能ping通h2，由于不知道怎样下发流表才能让交换机对接收到的ping的报文（即ip/icmp包）进行处理（只知道怎样下流表令其转发，不知道怎样让交换机自己接收），所以h1和h2并不能ping通各自的网关（即10.0.0.254和20.0.0.254）。
+
+用第一种方式的话，情况比ovs更不顺利。首先，arp的情况与ovs时基本一样，需要在h1和h2的arp表项上做上述工作；然后，要下发流表进行ip包的转发也没有成功，有可能是因为这种方式引入了一些vlan相关的问题，需要在流表中做一些vlan相关的操作才能成功，这种方式的arp可能也与vlan有关。
+
 
 ***
 
