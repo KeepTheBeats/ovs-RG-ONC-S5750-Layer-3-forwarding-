@@ -97,6 +97,23 @@ ovs-ofctl add-flow s1 "table=0,priority=500,icmp,nw_dst=20.0.0.1/32,actions=mod_
 
 用第一种方式的话，情况比ovs更不顺利。首先，arp的情况与ovs时基本一样，需要在h1和h2的arp表项上做上述工作；然后，要下发流表进行ip包的转发也没有成功，有可能是因为这种方式引入了一些vlan相关的问题，需要在流表中做一些vlan相关的操作才能成功，这种方式的arp可能也与vlan有关。
 
+***
+
+补充：
+
+之后又发现，即使分两个vlan，也是有办法让h1和h2 ping通，有如下几种方法：
+
+1. 模仿单臂路由，除了两个连接h1和h2的口之外，在每个vlan里多加入1个access口，分别连接另一台S5750C（记为s2）上的两个no swithport口，把两个vlan的网关设在这另一台S5750C上的两个no switchport口上。这种情况，就算s1和s2都开启openflow，只要下发ip相关的流表就可以让h1和h2 ping通，但是h1,h2无法和网关ping通。
+
+2. 好像是叫三层交换，在s1上配置一个trunk口，与s2上的一个trunk口连接，在s2上也设置两个vlan（vlan号应该是要和s1上的统一，如s1上是vlan10和vlan20，则s2上也要是vlan10和vlan20），在s2上为这两个vlan配置ip地址作为h1和h2的网关（这好像是叫svi，虚拟接口什么的）。这种情况，就算s1和s2都开启openflow，只要下发ip相关的流表就可以让h1和h2 ping通，但是h1,h2无法和网关ping通。
+
+以上两种情况下，arp都是可以自动通的，不需要流表，也不用去更改icmp(ip)报文的目地mac地址，这些东西感觉本来应该是需要用流表做的，但是锐捷应该是给做成自动的了。
+
+而且无论如何，只要开启openflow，就算能让h1和h2 ping通，h1和h2也不能ping通各自的网关，我觉得应该是我们不知道应该怎么发流表才能让交换机接收到包之后，不只是转发，而是自己去读那个包，自己去对那个包进行处理，（在流表里试过输出接口选local，好像是不管用的），感觉这个是比较关键的问题。
+
+
+
+
 
 ***
 
@@ -107,3 +124,7 @@ ovs-ofctl add-flow s1 "table=0,priority=500,icmp,nw_dst=20.0.0.1/32,actions=mod_
 [Linux arp命令](http://www.lx138.com/page.php?ID=VkZkd1drMVJQVDA9)
 
 [二层交换、路由和三层交换](http://blog.sina.com.cn/s/blog_43c625f101012euf.html)
+
+[华为ensp单臂路由配置](https://jingyan.baidu.com/article/cb5d6105e37b9f005c2fe03a.html)
+
+
