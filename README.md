@@ -1,8 +1,8 @@
-# £¨2017/7£©ÓÃOVS£¨Ä£ÄâÍø¹ØÊµÏÖ²»Í¬×ÓÍøµÄ»¥Í¨£©ÊµÏÖÈý²ã×ª·¢£¨Í¬Ê±ÓÃÈñ½ÝµÄS5750C½»»»»úºÍRG-ONC¿ØÖÆÆ÷½øÐÐÍ¬ÑùµÄÊµÑé£©
+# ï¼ˆ2017/7ï¼‰ç”¨OVSï¼ˆæ¨¡æ‹Ÿç½‘å…³å®žçŽ°ä¸åŒå­ç½‘çš„äº’é€šï¼‰å®žçŽ°ä¸‰å±‚è½¬å‘ï¼ˆåŒæ—¶ç”¨é”æ·çš„S5750Cäº¤æ¢æœºå’ŒRG-ONCæŽ§åˆ¶å™¨è¿›è¡ŒåŒæ ·çš„å®žéªŒï¼‰
 
 1. 
 
-ÓÃmininetºÍopendaylight½¨Á¢ÈçÏÂÍØÆË£º
+ç”¨mininetå’Œopendaylightå»ºç«‹å¦‚ä¸‹æ‹“æ‰‘ï¼š
 
 h1 h1-eth0:s1-eth1
 
@@ -12,119 +12,126 @@ s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0
 
 c0
 
-È»ºó£¬É¾³ýs1µÄËùÓÐÁ÷±í¡£
+ç„¶åŽï¼Œåˆ é™¤s1çš„æ‰€æœ‰æµè¡¨ã€‚
 
 
 2. 
 
-½«h1µÄipÉèÎª10.0.0.1/8£¬h2µÄipÉèÎª20.0.0.1/8¡£
+å°†h1çš„ipè®¾ä¸º10.0.0.1/8ï¼Œh2çš„ipè®¾ä¸º20.0.0.1/8ã€‚
 
-¸øh2ÅäÖÃÄ¬ÈÏÂ·ÓÉ10.0.0.254£¬¸øh2ÅäÖÃÄ¬ÈÏÂ·ÓÉ20.0.0.254¡£
+ç»™h2é…ç½®é»˜è®¤è·¯ç”±10.0.0.254ï¼Œç»™h2é…ç½®é»˜è®¤è·¯ç”±20.0.0.254ã€‚
 
 3.
 
-¸øs1-eth1ÅäÖÃipµØÖ·10.0.0.254/8£¬¸øs1-eth2ÅäÖÃipµØÖ·20.0.0.254/8¡£
+ç»™s1-eth1é…ç½®ipåœ°å€10.0.0.254/8ï¼Œç»™s1-eth2é…ç½®ipåœ°å€20.0.0.254/8ã€‚
 
 ***
 
-×öÁËÉÏÃæÖ®Ð©Ö®ºó£¬Èç¹ûÊÇÈñ½ÝµÄS5750C½»»»»úÔÚÃ»ÓÐ¿ªÆôopenflow¹¦ÄÜµÄÇé¿öÏÂ£¬h1£¬h2£¬10.0.0.254£¬20.0.0.254Õâ4¸öµØÖ·ÒÑ¾­¿ÉÒÔpingÍ¨ÁË¡£
+åšäº†ä¸Šé¢ä¹‹äº›ä¹‹åŽï¼Œå¦‚æžœæ˜¯é”æ·çš„S5750Cäº¤æ¢æœºåœ¨æ²¡æœ‰å¼€å¯openflowåŠŸèƒ½çš„æƒ…å†µä¸‹ï¼Œh1ï¼Œh2ï¼Œ10.0.0.254ï¼Œ20.0.0.254è¿™4ä¸ªåœ°å€å·²ç»å¯ä»¥pingé€šäº†ã€‚
 
-S5750CÔÚ¿ªÆôopenflow¹¦ÄÜÖ®ºó£¬ÒÔ¼°µÄOVSÉÏ£¬Á½Ì¨Ö÷»úºÍ½»»»»úÊÇping²»Í¨µÄ¡£
+S5750Cåœ¨å¼€å¯openflowåŠŸèƒ½ä¹‹åŽï¼Œä»¥åŠçš„OVSä¸Šï¼Œä¸¤å°ä¸»æœºå’Œäº¤æ¢æœºæ˜¯pingä¸é€šçš„ã€‚
 
 ***
 
 4.
 
-Ê×ÏÈµÄÎÊÌâÊÇ£¬h1ºÍh2Óë¸÷×ÔµÄÍø¹ØÊÇping²»Í¨µÄ£¬¼´h1ºÍ10.0.0.254ÊÇping²»Í¨µÄ¡£
+é¦–å…ˆçš„é—®é¢˜æ˜¯ï¼Œh1å’Œh2ä¸Žå„è‡ªçš„ç½‘å…³æ˜¯pingä¸é€šçš„ï¼Œå³h1å’Œ10.0.0.254æ˜¯pingä¸é€šçš„ã€‚
 
-Í¨¹ýtcpdump -vvv -i h1-eth0£¬tcpdump -vvv -i h2-eth0£¬tcpdump -vvv -i s1-eth1£¬tcpdump -vvv -i s1-eth2ÃüÁîÒÔ¼°²é¿´¸÷Éè±¸arp±íµÄ·½Ê½£¬ÅÐ¶ÏµÃ³ö£¬ÎÊÌâÊÇ½»»»»úÊÕµ½arp±¨ÎÄÖ®ºó²¢Ã»ÓÐ½øÐÐ´¦Àí£¬ËùÒÔ½»»»»ú»ñÈ¡²»µ½h1ºÍh2µÄmacµØÖ·£¬ËùÒÔh1ºÍ10.0.0.254 ping²»Í¨¡£
+é€šè¿‡tcpdump -vvv -i h1-eth0ï¼Œtcpdump -vvv -i h2-eth0ï¼Œtcpdump -vvv -i s1-eth1ï¼Œtcpdump -vvv -i s1-eth2å‘½ä»¤ä»¥åŠæŸ¥çœ‹å„è®¾å¤‡arpè¡¨çš„æ–¹å¼ï¼Œåˆ¤æ–­å¾—å‡ºï¼Œé—®é¢˜æ˜¯äº¤æ¢æœºæ”¶åˆ°arpæŠ¥æ–‡ä¹‹åŽå¹¶æ²¡æœ‰è¿›è¡Œå¤„ç†ï¼Œæ‰€ä»¥äº¤æ¢æœºèŽ·å–ä¸åˆ°h1å’Œh2çš„macåœ°å€ï¼Œæ‰€ä»¥h1å’Œ10.0.0.254 pingä¸é€šã€‚
 
-¸Ð¾õÊÇÐèÒªÏÂ·¢Ò»Ð©Á÷±í²ÅÄÜÈÃ½»»»»úÔÚÊÕµ½arp±¨ÎÄÖ®ºó½øÐÐ´¦Àí£¬½ø¶øÍ¨¹ýarp»ñÈ¡µ½h1µÄmacµØÖ·¡£
+æ„Ÿè§‰æ˜¯éœ€è¦ä¸‹å‘ä¸€äº›æµè¡¨æ‰èƒ½è®©äº¤æ¢æœºåœ¨æ”¶åˆ°arpæŠ¥æ–‡ä¹‹åŽè¿›è¡Œå¤„ç†ï¼Œè¿›è€Œé€šè¿‡arpèŽ·å–åˆ°h1çš„macåœ°å€ã€‚
 
-µ«ÊÇÎÒÃÇ²»ÖªµÀÓ¦¸ÃÏÂ·¢Ê²Ã´Á÷±íÊµÏÖÕâ¸öÐ§¹û¡£ËùÒÔÕâÀïÓöµ½ÁËºÜÄÑ½â¾öµÄÎÊÌâ¡£
+ä½†æ˜¯æˆ‘ä»¬ä¸çŸ¥é“åº”è¯¥ä¸‹å‘ä»€ä¹ˆæµè¡¨å®žçŽ°è¿™ä¸ªæ•ˆæžœã€‚æ‰€ä»¥è¿™é‡Œé‡åˆ°äº†å¾ˆéš¾è§£å†³çš„é—®é¢˜ã€‚
 
 5.
 
-ºóÀ´ÎÒÓÖÏëµ½£¬ÔÚÓÃs1 ping h1µÄÊ±ºò£¬ÓÃtcpdump -vvv -i h1-eth0²é¿´£¬·¢ÏÖ½»»»»úping h1µÄÊ±ºò£¬h1¿ÉÒÔÊÕµ½½»»»»ú·¢À´µÄarp±¨ÎÄ£¬²¢ÇÒ»á¶Ô¸Ã±¨ÎÄ×ö³ö»Ø¸´£¨s1-eth1Ò²ÄÜÊÕµ½¸Ã»Ø¸´µÄ±¨ÎÄ£¬Ö»ÊÇ½»»»»úÃ»ÓÐ×ö´¦Àí£©£¬ÕâÊ±ÓÃarp -a²é¿´h1µÄarp±í£¬·¢ÏÖh1ÒÑ¾­ÔÝÊ±»ñÈ¡µ½ÁË10.0.0.254µÄmacµØÖ·£¬ÔÚh1µÄarp±íÀï´æÔÚ10.0.0.254µÄmacµØÖ·Ê±£¬ÓÃh1 ping 10.0.0.254,·¢³öµÄ¾Í²»ÔÙÊÇarp±¨ÎÄ£¬¶øÊÇicmp±¨ÎÄ£¨s1-eth1Ò²ÄÜÊÕµ½¸Ãicmp±¨ÎÄ£©¡£
+åŽæ¥æˆ‘åˆæƒ³åˆ°ï¼Œåœ¨ç”¨s1 ping h1çš„æ—¶å€™ï¼Œç”¨tcpdump -vvv -i h1-eth0æŸ¥çœ‹ï¼Œå‘çŽ°äº¤æ¢æœºping h1çš„æ—¶å€™ï¼Œh1å¯ä»¥æ”¶åˆ°äº¤æ¢æœºå‘æ¥çš„arpæŠ¥æ–‡ï¼Œå¹¶ä¸”ä¼šå¯¹è¯¥æŠ¥æ–‡åšå‡ºå›žå¤ï¼ˆs1-eth1ä¹Ÿèƒ½æ”¶åˆ°è¯¥å›žå¤çš„æŠ¥æ–‡ï¼Œåªæ˜¯äº¤æ¢æœºæ²¡æœ‰åšå¤„ç†ï¼‰ï¼Œè¿™æ—¶ç”¨arp -aæŸ¥çœ‹h1çš„arpè¡¨ï¼Œå‘çŽ°h1å·²ç»æš‚æ—¶èŽ·å–åˆ°äº†10.0.0.254çš„macåœ°å€ï¼Œåœ¨h1çš„arpè¡¨é‡Œå­˜åœ¨10.0.0.254çš„macåœ°å€æ—¶ï¼Œç”¨h1 ping 10.0.0.254,å‘å‡ºçš„å°±ä¸å†æ˜¯arpæŠ¥æ–‡ï¼Œè€Œæ˜¯icmpæŠ¥æ–‡ï¼ˆs1-eth1ä¹Ÿèƒ½æ”¶åˆ°è¯¥icmpæŠ¥æ–‡ï¼‰ã€‚
 
-ÓÚÊÇÏë£¬¼´Ê¹½»»»»ú²»ÄÜ»ñÈ¡µ½h1ºÍh2µÄmacµØÖ·£¬Ö»Òªh1ºÍh2ÄÜ»ñÈ¡µ½10.0.0.254ºÍ20.0.0.254µÄmac£¬²¢ÔÚ½»»»»úÉÏÏÂ·¢Á÷±í½«pingµÄ±¨ÎÄ£¨icmp»òip£¿£©½øÐÐ×ª·¢£¬Í¬Ê±Ìæ»»µôpingµÄ±¨ÎÄÖÐµÄÄ¿µÄmacµØÖ·£¬Ò²Ðí¾Í¿ÉÒÔÊ¹h1 pingÍ¨h2¡£
-
-***
-
-¹ý³Ì´ó¸Å£º
-
-h1 ping h2Ê±£¬ÓÉÓÚh1ºÍh2µÄipµØÖ·²»ÔÚÍ¬Ò»Íø¶Î£¬ËùÒÔh1ÏÈÓÃarpÇëÇóÍø¹ØµÄmac£¬È»ºó·¢icmp±¨ÎÄ£¬Ô´ipÎªh1£¬Ä¿µÄipÎªh2,Ô´macÎªh1,Ä¿µÄmacÎªh1µÄÍø¹Ø¡£s1ÔÙ·¢arpÇëÇóh2µÄmac£¬È»ºó½«´Óh1ÊÕµ½µÄicmp±¨ÎÄ£¬Ô´mac¸ÄÎª20.0.0.254µÄmac£¬Ä¿µÄmac¸ÄÎªh2¡£
+äºŽæ˜¯æƒ³ï¼Œå³ä½¿äº¤æ¢æœºä¸èƒ½èŽ·å–åˆ°h1å’Œh2çš„macåœ°å€ï¼Œåªè¦h1å’Œh2èƒ½èŽ·å–åˆ°10.0.0.254å’Œ20.0.0.254çš„macï¼Œå¹¶åœ¨äº¤æ¢æœºä¸Šä¸‹å‘æµè¡¨å°†pingçš„æŠ¥æ–‡ï¼ˆicmpæˆ–ipï¼Ÿï¼‰è¿›è¡Œè½¬å‘ï¼ŒåŒæ—¶æ›¿æ¢æŽ‰pingçš„æŠ¥æ–‡ä¸­çš„ç›®çš„macåœ°å€ï¼Œä¹Ÿè®¸å°±å¯ä»¥ä½¿h1 pingé€šh2ã€‚
 
 ***
 
-ËùÒÔÔÚ½»»»»úÉÏÏÂ·¢Á½ÌõÁ÷±í£¬Ê¹½»»»»ú¶ÔpingµÄ±¨ÎÄ½øÐÐ×ª·¢£¬
+è¿‡ç¨‹å¤§æ¦‚ï¼š
+
+h1 ping h2æ—¶ï¼Œç”±äºŽh1å’Œh2çš„ipåœ°å€ä¸åœ¨åŒä¸€ç½‘æ®µï¼Œæ‰€ä»¥h1å…ˆç”¨arpè¯·æ±‚ç½‘å…³çš„macï¼Œç„¶åŽå‘icmpæŠ¥æ–‡ï¼Œæºipä¸ºh1ï¼Œç›®çš„ipä¸ºh2,æºmacä¸ºh1,ç›®çš„macä¸ºh1çš„ç½‘å…³ã€‚s1å†å‘arpè¯·æ±‚h2çš„macï¼Œç„¶åŽå°†ä»Žh1æ”¶åˆ°çš„icmpæŠ¥æ–‡ï¼Œæºmacæ”¹ä¸º20.0.0.254çš„macï¼Œç›®çš„macæ”¹ä¸ºh2ã€‚
+
+***
+
+æ‰€ä»¥åœ¨äº¤æ¢æœºä¸Šä¸‹å‘ä¸¤æ¡æµè¡¨ï¼Œä½¿äº¤æ¢æœºå¯¹pingçš„æŠ¥æ–‡è¿›è¡Œè½¬å‘ï¼Œ
 
 ovs-ofctl add-flow s1 "table=0,priority=500,ip,nw_dst=10.0.0.1/32,actions=mod_dl_dst=0a:9c:4b:db:35:27,output:1"
 
 ovs-ofctl add-flow s1 "table=0,priority=500,ip,nw_dst=20.0.0.1/32,actions=mod_dl_dst=ca:03:c6:01:06:0b,output:2"
 
-£¨±¨ÎÄÀàÐÍÐ´ip»òÊÇicmp¶¼ÄÜ³É¹¦£¬ÖÁÓÚÎªÊ²Ã´£¬¾ßÌåÃ»ÓÐÑÐ¾¿¹ý£¬²»¹ý´óÖÂ²éÁËÒ»ÏÂ£¬´ó¸ÅºÃÏñÊÇicmp°üÊÇ·â×°ÔÚip°üÀïµÄ¡£
+ï¼ˆæŠ¥æ–‡ç±»åž‹å†™ipæˆ–æ˜¯icmpéƒ½èƒ½æˆåŠŸï¼Œè‡³äºŽä¸ºä»€ä¹ˆï¼Œå…·ä½“æ²¡æœ‰ç ”ç©¶è¿‡ï¼Œä¸è¿‡å¤§è‡´æŸ¥äº†ä¸€ä¸‹ï¼Œå¤§æ¦‚å¥½åƒæ˜¯icmpåŒ…æ˜¯å°è£…åœ¨ipåŒ…é‡Œçš„ã€‚
 
 ovs-ofctl add-flow s1 "table=0,priority=500,icmp,nw_dst=10.0.0.1/32,actions=mod_dl_dst=0a:9c:4b:db:35:27,output:1"
 
 ovs-ofctl add-flow s1 "table=0,priority=500,icmp,nw_dst=20.0.0.1/32,actions=mod_dl_dst=ca:03:c6:01:06:0b,output:2"
 
-£©
+ï¼‰
 
-Ö®ºóÒª×öµÄ¾ÍÊÇÈÃh1»ñµÃ10.0.0.254µÄmacµØÖ·£¬ÈÃh2»ñµÃ20.0.0.254µÄmacµØÖ·¡£
+ä¹‹åŽè¦åšçš„å°±æ˜¯è®©h1èŽ·å¾—10.0.0.254çš„macåœ°å€ï¼Œè®©h2èŽ·å¾—20.0.0.254çš„macåœ°å€ã€‚
 
-×îÀíÏëµÄ·½Ê½»¹ÊÇÓÃarpÀ´»ñµÃ£¬µ«ÒòÎªÎÒÃÇ»¹²»ÖªµÀÔõÃ´ÏÂ·¢Á÷±í²ÅÄÜÈÃ½»»»»ú´¦Àíarp±¨ÎÄ£¬ËùÒÔÕâÖÖ·½Ê½ÔÝÊ±ÓÃ²»ÁË¡£
+æœ€ç†æƒ³çš„æ–¹å¼è¿˜æ˜¯ç”¨arpæ¥èŽ·å¾—ï¼Œä½†å› ä¸ºæˆ‘ä»¬è¿˜ä¸çŸ¥é“æ€Žä¹ˆä¸‹å‘æµè¡¨æ‰èƒ½è®©äº¤æ¢æœºå¤„ç†arpæŠ¥æ–‡ï¼Œæ‰€ä»¥è¿™ç§æ–¹å¼æš‚æ—¶ç”¨ä¸äº†ã€‚
 
-ÎÒÔÝÊ±ÓÃÁË2ÖÖ·½Ê½ÈÃh1»ñµÃ10.0.0.254µÄmacµØÖ·£¬ÈÃh2»ñµÃ20.0.0.254µÄmacµØÖ·£¬
+æˆ‘æš‚æ—¶ç”¨äº†2ç§æ–¹å¼è®©h1èŽ·å¾—10.0.0.254çš„macåœ°å€ï¼Œè®©h2èŽ·å¾—20.0.0.254çš„macåœ°å€ï¼Œ
 
-1. ²»¶ÏµØÈÃs1 ping h1ºÍh2,ÕâÑù£¬s1»á²»¶ÏµØÓÃarp°Ñ10.0.0.254ºÍ20.0.0.254µÄmacµØÖ··Ö±ð·¢¸øh1ºÍh2¡£
+1. ä¸æ–­åœ°è®©s1 ping h1å’Œh2,è¿™æ ·ï¼Œs1ä¼šä¸æ–­åœ°ç”¨arpæŠŠ10.0.0.254å’Œ20.0.0.254çš„macåœ°å€åˆ†åˆ«å‘ç»™h1å’Œh2ã€‚
 
-2. ÓÃarp -s <ipµØÖ·> <macµØÖ·>ÃüÁî½«10.0.0.254ºÍ20.0.0.254µÄmacµØÖ·ÅäÖÃµ½h1ºÍh2µÄarp±íÀï¡£
+2. ç”¨arp -s <ipåœ°å€> <macåœ°å€>å‘½ä»¤å°†10.0.0.254å’Œ20.0.0.254çš„macåœ°å€é…ç½®åˆ°h1å’Œh2çš„arpè¡¨é‡Œã€‚
 
-²âÊÔÖ®ºó·¢ÏÖ£¬ÕâÁ½ÖÖ·½Ê½¶¼¿ÉÒÔÈÃh1³É¹¦pingÍ¨h2¡£
-
-***
-
-ÓÃÈñ½ÝµÄS5750C½»»»»úºÍRG-ONC¿ØÖÆÆ÷£¬À´½øÐÐÊµÑéµÄ»°£¬ºÍOVSÓÐÒ»Ð©²»Ò»ÑùµÄµØ·½¡£
-
-Ê×ÏÈ£¬ÅäÖÃÍø¹Ø£¬¼´10.0.0.254ºÍ20.0.0.254ÕâÁ½¸öµØÖ·Ê±£¬ÓÐÁ½ÖÖ·½Ê½£º
-
-µÚÒ»ÖÖ£ºs1-eth1ºÍs1-eth2ÉèÎªswitchport mode access£¬ÔÙ½«ËüÃÇ¼ÓÈëÁ½¸övlanÀï£¬°ÑÕâÁ½¸övlanµÄipÉèÎª10.0.0.254ºÍ20.0.0.254¡£
-
-µÚ¶þÖÖ£ºs1-eth1ºÍs2-eth2ÉèÎªno switchport£¬ÔÙ½«ËüÃÇ·Ö±ðÉèÖÃipµØÖ·£¬10.0.0.254ºÍ20.0.0.254¡£
-
-ÓÃµÚ¶þÖÖ·½Ê½¿ÉÒÔºÜÈÝÒ×µØÈÃh1ºÍh2 pingÍ¨£¬ÕâÖÖ·½Ê½Àï£¬²»ÓÃÈÎºÎÁ÷±í£¬S5750C¾Í¿ÉÒÔÕý³£¶Ôh1·¢À´µÄarp×ö´¦Àí²¢×ö³ö»ØÓ¦£¬ËùÒÔ²»ÐèÒªÔÚh1µÄarp±íÏîÉÏ×öÉÏÃæµÄÄÇÐ©¹¤×÷¡£¶Ôip°ü½øÐÐ×ª·¢ÔòÐèÒªÏÂ·¢Á÷±í£¬²»¹ý£¬Ö»ÐèÒªÖ¸¶¨Êä³ö¶Ë¿Ú¾ÍÐÐÁË£¬²»ÐèÒª¸ü¸ÄÄ¿µÄmacµØÖ·¡£Ó¦¸ÃÊÇÈñ½ÝÔÚÉè¼Æ²úÆ·µÄÊ±ºòÈÃS5750C°ÑÕâÐ©ÊÂÇé×Ô¶¯Íê³ÉÁË¡£µ«¼´Ê¹h1ÄÜpingÍ¨h2£¬ÓÉÓÚ²»ÖªµÀÔõÑùÏÂ·¢Á÷±í²ÅÄÜÈÃ½»»»»ú¶Ô½ÓÊÕµ½µÄpingµÄ±¨ÎÄ£¨¼´ip/icmp°ü£©½øÐÐ´¦Àí£¨Ö»ÖªµÀÔõÑùÏÂÁ÷±íÁîÆä×ª·¢£¬²»ÖªµÀÔõÑùÈÃ½»»»»ú×Ô¼º½ÓÊÕ£©£¬ËùÒÔh1ºÍh2²¢²»ÄÜpingÍ¨¸÷×ÔµÄÍø¹Ø£¨¼´10.0.0.254ºÍ20.0.0.254£©¡£
-
-ÓÃµÚÒ»ÖÖ·½Ê½µÄ»°£¬Çé¿ö±Èovs¸ü²»Ë³Àû¡£Ê×ÏÈ£¬arpµÄÇé¿öÓëovsÊ±»ù±¾Ò»Ñù£¬ÐèÒªÔÚh1ºÍh2µÄarp±íÏîÉÏ×öÉÏÊö¹¤×÷£»È»ºó£¬ÒªÏÂ·¢Á÷±í½øÐÐip°üµÄ×ª·¢Ò²Ã»ÓÐ³É¹¦£¬ÓÐ¿ÉÄÜÊÇÒòÎªÕâÖÖ·½Ê½ÒýÈëÁËÒ»Ð©vlanÏà¹ØµÄÎÊÌâ£¬ÐèÒªÔÚÁ÷±íÖÐ×öÒ»Ð©vlanÏà¹ØµÄ²Ù×÷²ÅÄÜ³É¹¦£¬ÕâÖÖ·½Ê½µÄarp¿ÉÄÜÒ²ÓëvlanÓÐ¹Ø¡£
-
-***
-
-²¹³ä£º
-
-Ö®ºóÓÖ·¢ÏÖ£¬¼´Ê¹·ÖÁ½¸övlan£¬Ò²ÊÇÓÐ°ì·¨ÈÃh1ºÍh2 pingÍ¨£¬ÓÐÈçÏÂ¼¸ÖÖ·½·¨£º
-
-1. Ä£·Âµ¥±ÛÂ·ÓÉ£¬³ýÁËÁ½¸öÁ¬½Óh1ºÍh2µÄ¿ÚÖ®Íâ£¬ÔÚÃ¿¸övlanÀï¶à¼ÓÈë1¸öaccess¿Ú£¬·Ö±ðÁ¬½ÓÁíÒ»Ì¨S5750C£¨¼ÇÎªs2£©ÉÏµÄÁ½¸öno swithport¿Ú£¬°ÑÁ½¸övlanµÄÍø¹ØÉèÔÚÕâÁíÒ»Ì¨S5750CÉÏµÄÁ½¸öno switchport¿ÚÉÏ¡£ÕâÖÖÇé¿ö£¬¾ÍËãs1ºÍs2¶¼¿ªÆôopenflow£¬Ö»ÒªÏÂ·¢ipÏà¹ØµÄÁ÷±í¾Í¿ÉÒÔÈÃh1ºÍh2 pingÍ¨£¬µ«ÊÇh1,h2ÎÞ·¨ºÍÍø¹ØpingÍ¨¡£
-
-2. ºÃÏñÊÇ½ÐÈý²ã½»»»£¬ÔÚs1ÉÏÅäÖÃÒ»¸ötrunk¿Ú£¬Óës2ÉÏµÄÒ»¸ötrunk¿ÚÁ¬½Ó£¬ÔÚs2ÉÏÒ²ÉèÖÃÁ½¸övlan£¨vlanºÅÓ¦¸ÃÊÇÒªºÍs1ÉÏµÄÍ³Ò»£¬Èçs1ÉÏÊÇvlan10ºÍvlan20£¬Ôòs2ÉÏÒ²ÒªÊÇvlan10ºÍvlan20£©£¬ÔÚs2ÉÏÎªÕâÁ½¸övlanÅäÖÃipµØÖ·×÷Îªh1ºÍh2µÄÍø¹Ø£¨ÕâºÃÏñÊÇ½Ðsvi£¬ÐéÄâ½Ó¿ÚÊ²Ã´µÄ£©¡£ÕâÖÖÇé¿ö£¬¾ÍËãs1ºÍs2¶¼¿ªÆôopenflow£¬Ö»ÒªÏÂ·¢ipÏà¹ØµÄÁ÷±í¾Í¿ÉÒÔÈÃh1ºÍh2 pingÍ¨£¬µ«ÊÇh1,h2ÎÞ·¨ºÍÍø¹ØpingÍ¨¡£
-
-ÒÔÉÏÁ½ÖÖÇé¿öÏÂ£¬arp¶¼ÊÇ¿ÉÒÔ×Ô¶¯Í¨µÄ£¬²»ÐèÒªÁ÷±í£¬Ò²²»ÓÃÈ¥¸ü¸Äicmp(ip)±¨ÎÄµÄÄ¿µØmacµØÖ·£¬ÕâÐ©¶«Î÷¸Ð¾õ±¾À´Ó¦¸ÃÊÇÐèÒªÓÃÁ÷±í×öµÄ£¬µ«ÊÇÈñ½ÝÓ¦¸ÃÊÇ¸ø×ö³É×Ô¶¯µÄÁË¡£
-
-¶øÇÒÎÞÂÛÈçºÎ£¬Ö»Òª¿ªÆôopenflow£¬¾ÍËãÄÜÈÃh1ºÍh2 pingÍ¨£¬h1ºÍh2Ò²²»ÄÜpingÍ¨¸÷×ÔµÄÍø¹Ø£¬ÎÒ¾õµÃÓ¦¸ÃÊÇÎÒÃÇ²»ÖªµÀÓ¦¸ÃÔõÃ´·¢Á÷±í²ÅÄÜÈÃ½»»»»ú½ÓÊÕµ½°üÖ®ºó£¬²»Ö»ÊÇ×ª·¢£¬¶øÊÇ×Ô¼ºÈ¥¶ÁÄÇ¸ö°ü£¬×Ô¼ºÈ¥¶ÔÄÇ¸ö°ü½øÐÐ´¦Àí£¬£¨ÔÚÁ÷±íÀïÊÔ¹ýÊä³ö½Ó¿ÚÑ¡local£¬ºÃÏñÊÇ²»¹ÜÓÃµÄ£©£¬¸Ð¾õÕâ¸öÊÇ±È½Ï¹Ø¼üµÄÎÊÌâ¡£
+æµ‹è¯•ä¹‹åŽå‘çŽ°ï¼Œè¿™ä¸¤ç§æ–¹å¼éƒ½å¯ä»¥è®©h1æˆåŠŸpingé€šh2ã€‚
 
 
+**ä¸‹é¢è¿™äº›è½¬ä¸ºå¼•ç”¨çš„å†…å®¹éƒ½æ˜¯æœ‰é”™è¯¯çš„ï¼Œé‡Œé¢è¯´çš„æ‰€æœ‰æƒ…å†µå®žé™…ä¸Šéƒ½æ˜¯pingä¸é€šçš„ï¼Œä¹‹æ‰€ä»¥è¯•çš„æ—¶å€™èƒ½pingé€šåº”è¯¥æ˜¯å› ä¸ºæ²¡æœ‰åˆ é™¤äº¤æ¢æœºä¸Šçš„arpç¼“å­˜ï¼Œä»¥ä¸‹è¯´çš„æ‰€æœ‰èƒ½pingé€šçš„æƒ…å†µï¼Œåªè¦åœ¨äº¤æ¢æœºä¸Šæ¸…ç©ºä¸€ä¸‹arpç¼“å­˜ï¼Œå°±éƒ½pingä¸é€šäº†ã€‚**
+
+**æ‰€ä»¥è¿˜æ˜¯éœ€è¦è§£å†³å¦‚ä½•ä¸‹å‘æµè¡¨æ‰èƒ½è®©äº¤æ¢æœºä¸åªæ˜¯å¯¹æ”¶åˆ°çš„åŒ…è¿›è¡Œè½¬å‘ï¼Œè€Œæ˜¯å¯¹åŒ…è¿›è¡Œè§£è¯»ï¼Œä¹Ÿå°±æ˜¯è½¬å‘åˆ°æœ¬åœ°ã€‚**
 
 
 
 ***
 
-²Î¿¼£º
+>ç”¨é”æ·çš„S5750Cäº¤æ¢æœºå’ŒRG-ONCæŽ§åˆ¶å™¨ï¼Œæ¥è¿›è¡Œå®žéªŒçš„è¯ï¼Œå’ŒOVSæœ‰ä¸€äº›ä¸ä¸€æ ·çš„åœ°æ–¹ã€‚
 
-[Open vSwithÄ£ÄâÍø¹ØÊµÏÖ²»Í¬×ÓÍøµÄ»¥Í¨ ](http://www.sdnlab.com/14101.html)
+>é¦–å…ˆï¼Œé…ç½®ç½‘å…³ï¼Œå³10.0.0.254å’Œ20.0.0.254è¿™ä¸¤ä¸ªåœ°å€æ—¶ï¼Œæœ‰ä¸¤ç§æ–¹å¼ï¼š
 
-[Linux arpÃüÁî](http://www.lx138.com/page.php?ID=VkZkd1drMVJQVDA9)
+>ç¬¬ä¸€ç§ï¼šs1-eth1å’Œs1-eth2è®¾ä¸ºswitchport mode accessï¼Œå†å°†å®ƒä»¬åŠ å…¥ä¸¤ä¸ªvlané‡Œï¼ŒæŠŠè¿™ä¸¤ä¸ªvlançš„ipè®¾ä¸º10.0.0.254å’Œ20.0.0.254ã€‚
 
-[¶þ²ã½»»»¡¢Â·ÓÉºÍÈý²ã½»»»](http://blog.sina.com.cn/s/blog_43c625f101012euf.html)
+>ç¬¬äºŒç§ï¼šs1-eth1å’Œs2-eth2è®¾ä¸ºno switchportï¼Œå†å°†å®ƒä»¬åˆ†åˆ«è®¾ç½®ipåœ°å€ï¼Œ10.0.0.254å’Œ20.0.0.254ã€‚
 
-[»ªÎªenspµ¥±ÛÂ·ÓÉÅäÖÃ](https://jingyan.baidu.com/article/cb5d6105e37b9f005c2fe03a.html)
+>ç”¨ç¬¬äºŒç§æ–¹å¼å¯ä»¥å¾ˆå®¹æ˜“åœ°è®©h1å’Œh2 pingé€šï¼Œè¿™ç§æ–¹å¼é‡Œï¼Œä¸ç”¨ä»»ä½•æµè¡¨ï¼ŒS5750Cå°±å¯ä»¥æ­£å¸¸å¯¹h1å‘æ¥çš„arpåšå¤„ç†å¹¶åšå‡ºå›žåº”ï¼Œæ‰€ä»¥ä¸éœ€è¦åœ¨h1çš„arpè¡¨é¡¹ä¸Šåšä¸Šé¢çš„é‚£äº›å·¥ä½œã€‚å¯¹ipåŒ…è¿›è¡Œè½¬å‘åˆ™éœ€è¦ä¸‹å‘æµè¡¨ï¼Œä¸è¿‡ï¼Œåªéœ€è¦æŒ‡å®šè¾“å‡ºç«¯å£å°±è¡Œäº†ï¼Œä¸éœ€è¦æ›´æ”¹ç›®çš„macåœ°å€ã€‚åº”è¯¥æ˜¯é”æ·åœ¨è®¾è®¡äº§å“çš„æ—¶å€™è®©S5750CæŠŠè¿™äº›äº‹æƒ…è‡ªåŠ¨å®Œæˆäº†ã€‚ä½†å³ä½¿h1èƒ½pingé€šh2ï¼Œç”±äºŽä¸çŸ¥é“æ€Žæ ·ä¸‹å‘æµè¡¨æ‰èƒ½è®©äº¤æ¢æœºå¯¹æŽ¥æ”¶åˆ°çš„pingçš„æŠ¥æ–‡ï¼ˆå³ip/icmpåŒ…ï¼‰è¿›è¡Œå¤„ç†ï¼ˆåªçŸ¥é“æ€Žæ ·ä¸‹æµè¡¨ä»¤å…¶è½¬å‘ï¼Œä¸çŸ¥é“æ€Žæ ·è®©äº¤æ¢æœºè‡ªå·±æŽ¥æ”¶ï¼‰ï¼Œæ‰€ä»¥h1å’Œh2å¹¶ä¸èƒ½pingé€šå„è‡ªçš„ç½‘å…³ï¼ˆå³10.0.0.254å’Œ20.0.0.254ï¼‰ã€‚
+
+>ç”¨ç¬¬ä¸€ç§æ–¹å¼çš„è¯ï¼Œæƒ…å†µæ¯”ovsæ›´ä¸é¡ºåˆ©ã€‚é¦–å…ˆï¼Œarpçš„æƒ…å†µä¸Žovsæ—¶åŸºæœ¬ä¸€æ ·ï¼Œéœ€è¦åœ¨h1å’Œh2çš„arpè¡¨é¡¹ä¸Šåšä¸Šè¿°å·¥ä½œï¼›ç„¶åŽï¼Œè¦ä¸‹å‘æµè¡¨è¿›è¡ŒipåŒ…çš„è½¬å‘ä¹Ÿæ²¡æœ‰æˆåŠŸï¼Œæœ‰å¯èƒ½æ˜¯å› ä¸ºè¿™ç§æ–¹å¼å¼•å…¥äº†ä¸€äº›vlanç›¸å…³çš„é—®é¢˜ï¼Œéœ€è¦åœ¨æµè¡¨ä¸­åšä¸€äº›vlanç›¸å…³çš„æ“ä½œæ‰èƒ½æˆåŠŸï¼Œè¿™ç§æ–¹å¼çš„arpå¯èƒ½ä¹Ÿä¸Žvlanæœ‰å…³ã€‚
+
+***
+
+>è¡¥å……ï¼š
+
+>ä¹‹åŽåˆå‘çŽ°ï¼Œå³ä½¿åˆ†ä¸¤ä¸ªvlanï¼Œä¹Ÿæ˜¯æœ‰åŠžæ³•è®©h1å’Œh2 pingé€šï¼Œæœ‰å¦‚ä¸‹å‡ ç§æ–¹æ³•ï¼š
+
+>1. æ¨¡ä»¿å•è‡‚è·¯ç”±ï¼Œé™¤äº†ä¸¤ä¸ªè¿žæŽ¥h1å’Œh2çš„å£ä¹‹å¤–ï¼Œåœ¨æ¯ä¸ªvlané‡Œå¤šåŠ å…¥1ä¸ªaccesså£ï¼Œåˆ†åˆ«è¿žæŽ¥å¦ä¸€å°S5750Cï¼ˆè®°ä¸ºs2ï¼‰ä¸Šçš„ä¸¤ä¸ªno swithportå£ï¼ŒæŠŠä¸¤ä¸ªvlançš„ç½‘å…³è®¾åœ¨è¿™å¦ä¸€å°S5750Cä¸Šçš„ä¸¤ä¸ªno switchportå£ä¸Šã€‚è¿™ç§æƒ…å†µï¼Œå°±ç®—s1å’Œs2éƒ½å¼€å¯openflowï¼Œåªè¦ä¸‹å‘ipç›¸å…³çš„æµè¡¨å°±å¯ä»¥è®©h1å’Œh2 pingé€šï¼Œä½†æ˜¯h1,h2æ— æ³•å’Œç½‘å…³pingé€šã€‚
+
+>2. å¥½åƒæ˜¯å«ä¸‰å±‚äº¤æ¢ï¼Œåœ¨s1ä¸Šé…ç½®ä¸€ä¸ªtrunkå£ï¼Œä¸Žs2ä¸Šçš„ä¸€ä¸ªtrunkå£è¿žæŽ¥ï¼Œåœ¨s2ä¸Šä¹Ÿè®¾ç½®ä¸¤ä¸ªvlanï¼ˆvlanå·åº”è¯¥æ˜¯è¦å’Œs1ä¸Šçš„ç»Ÿä¸€ï¼Œå¦‚s1ä¸Šæ˜¯vlan10å’Œvlan20ï¼Œåˆ™s2ä¸Šä¹Ÿè¦æ˜¯vlan10å’Œvlan20ï¼‰ï¼Œåœ¨s2ä¸Šä¸ºè¿™ä¸¤ä¸ªvlané…ç½®ipåœ°å€ä½œä¸ºh1å’Œh2çš„ç½‘å…³ï¼ˆè¿™å¥½åƒæ˜¯å«sviï¼Œè™šæ‹ŸæŽ¥å£ä»€ä¹ˆçš„ï¼‰ã€‚è¿™ç§æƒ…å†µï¼Œå°±ç®—s1å’Œs2éƒ½å¼€å¯openflowï¼Œåªè¦ä¸‹å‘ipç›¸å…³çš„æµè¡¨å°±å¯ä»¥è®©h1å’Œh2 pingé€šï¼Œä½†æ˜¯h1,h2æ— æ³•å’Œç½‘å…³pingé€šã€‚
+
+>ä»¥ä¸Šä¸¤ç§æƒ…å†µä¸‹ï¼Œarpéƒ½æ˜¯å¯ä»¥è‡ªåŠ¨é€šçš„ï¼Œä¸éœ€è¦æµè¡¨ï¼Œä¹Ÿä¸ç”¨åŽ»æ›´æ”¹icmp(ip)æŠ¥æ–‡çš„ç›®åœ°macåœ°å€ï¼Œè¿™äº›ä¸œè¥¿æ„Ÿè§‰æœ¬æ¥åº”è¯¥æ˜¯éœ€è¦ç”¨æµè¡¨åšçš„ï¼Œä½†æ˜¯é”æ·åº”è¯¥æ˜¯ç»™åšæˆè‡ªåŠ¨çš„äº†ã€‚
+
+>è€Œä¸”æ— è®ºå¦‚ä½•ï¼Œåªè¦å¼€å¯openflowï¼Œå°±ç®—èƒ½è®©h1å’Œh2 pingé€šï¼Œh1å’Œh2ä¹Ÿä¸èƒ½pingé€šå„è‡ªçš„ç½‘å…³ï¼Œæˆ‘è§‰å¾—åº”è¯¥æ˜¯æˆ‘ä»¬ä¸çŸ¥é“åº”è¯¥æ€Žä¹ˆå‘æµè¡¨æ‰èƒ½è®©äº¤æ¢æœºæŽ¥æ”¶åˆ°åŒ…ä¹‹åŽï¼Œä¸åªæ˜¯è½¬å‘ï¼Œè€Œæ˜¯è‡ªå·±åŽ»è¯»é‚£ä¸ªåŒ…ï¼Œè‡ªå·±åŽ»å¯¹é‚£ä¸ªåŒ…è¿›è¡Œå¤„ç†ï¼Œï¼ˆåœ¨æµè¡¨é‡Œè¯•è¿‡è¾“å‡ºæŽ¥å£é€‰localï¼Œå¥½åƒæ˜¯ä¸ç®¡ç”¨çš„ï¼‰ï¼Œæ„Ÿè§‰è¿™ä¸ªæ˜¯æ¯”è¾ƒå…³é”®çš„é—®é¢˜ã€‚
+
+
+
+
+
+***
+
+å‚è€ƒï¼š
+
+[Open vSwithæ¨¡æ‹Ÿç½‘å…³å®žçŽ°ä¸åŒå­ç½‘çš„äº’é€š ](http://www.sdnlab.com/14101.html)
+
+[Linux arpå‘½ä»¤](http://www.lx138.com/page.php?ID=VkZkd1drMVJQVDA9)
+
+[äºŒå±‚äº¤æ¢ã€è·¯ç”±å’Œä¸‰å±‚äº¤æ¢](http://blog.sina.com.cn/s/blog_43c625f101012euf.html)
+
+[åŽä¸ºenspå•è‡‚è·¯ç”±é…ç½®](https://jingyan.baidu.com/article/cb5d6105e37b9f005c2fe03a.html)
 
 
